@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* ---- AUTH ---- */
+.contenedor-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.formulario-auth {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 420px;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+/* ---- CONTENEDOR PRINCIPAL ---- */
+.contenedor {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* ---- HEADER ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.titulo {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.titulo-auth {
+  text-align: center;
+  color: #1a1a2e;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ---- INPUTS ---- */
+.input {
+  padding: 14px 16px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ---- FORMULARIO TAREAS ---- */
+.formulario {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ---- BOTONES ---- */
+.boton-agregar {
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.boton-agregar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.boton-agregar:active {
+  transform: translateY(0);
+}
+
+.boton-logout {
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.boton-completar {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #4cc9a0, #2ecc71);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.boton-completar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 201, 160, 0.4);
+}
+
+.boton-deshacer {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #f9a826, #f39c12);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.boton-deshacer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 168, 38, 0.4);
+}
+
+.boton-eliminar {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #ef476f, #e74c3c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.boton-eliminar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 71, 111, 0.4);
+}
+
+/* ---- CONTADOR ---- */
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.contador-total {
+  background: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contador-pendientes {
+  background: rgba(255, 255, 255, 0.9);
+  color: #f9a826;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contador-completadas {
+  background: rgba(255, 255, 255, 0.9);
+  color: #4cc9a0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---- FILTROS ---- */
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.filtro:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.filtro-activo {
+  padding: 10px 22px;
+  background: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #667eea;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ---- LISTA DE TAREAS ---- */
+.lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tarea {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.tarea:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tarea-completada-card {
+  border-left-color: #4cc9a0;
+  opacity: 0.8;
+}
+
+.tarea-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tarea-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  word-break: break-word;
+}
+
+.tarea-titulo-completada {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.descripcion {
+  font-size: 0.82rem;
+  color: #999;
+  word-break: break-word;
+}
+
+.tarea-botones {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ---- VACÍO ---- */
+.vacio {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: white;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.vacio-icono {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.vacio p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* ---- ERROR Y LINKS ---- */
+.error {
+  color: #ef476f;
+  font-size: 0.85rem;
+  text-align: center;
+  background: rgba(239, 71, 111, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.link-auth {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.link-auth span {
+  color: #667eea;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.link-auth span:hover {
+  text-decoration: underline;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .contenedor {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .titulo {
+    font-size: 1.2rem;
+  }
+
+  .formulario {
+    padding: 18px;
+  }
+
+  .tarea {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tarea-botones {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .formulario-auth {
+    padding: 30px 20px;
+  }
+
+  .contador {
+    gap: 8px;
+  }
+
+  .contador-total,
+  .contador-pendientes,
+  .contador-completadas {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
